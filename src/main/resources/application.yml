@@ -1,0 +1,21 @@
+spring:
+  redis:
+    host: 3.112.120.15
+    port: 6379
+    password: test-redis-2019
+  datasource:
+    url: jdbc:mysql://localhost:3306/catalog?allowPublicKeyRetrieval=true&useSSL=false&charset=utf8
+    username: jamie
+    password: Hsbc1234
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: false
+      connection-test-query: SELECT 1
+      maximum-pool-size: 5
+      idle-timeout: 30000
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
