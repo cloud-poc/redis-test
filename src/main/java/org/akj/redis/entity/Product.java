@@ -1,11 +1,7 @@
 package org.akj.redis.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -24,7 +20,6 @@ public class Product implements Serializable {
 
     @Column(nullable = false, unique = true)
     @NotNull
-    @Length(min = 3, max = 20)
     private String code;
 
     @Column(nullable = false)

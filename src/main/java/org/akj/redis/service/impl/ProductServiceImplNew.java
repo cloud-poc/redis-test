@@ -6,7 +6,6 @@ import org.akj.redis.repository.ProductRepository;
 import org.akj.redis.service.ProductService;
 import org.akj.springboot.common.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;

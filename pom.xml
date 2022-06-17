@@ -3,29 +3,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>org.akj.springboot</groupId>
+        <artifactId>spring-learn-series-base</artifactId>
+        <version>2.0.0</version>
     </parent>
     <groupId>org.akj.redis</groupId>
     <artifactId>redis-test</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>redis-test</name>
     <description>Spring boot integrate with Redis(Spring-data-redis)</description>
 
     <properties>
-        <java.version>1.8</java.version>
-        <common.version>1.0.0</common.version>
-        <jedis.version>3.1.0</jedis.version>
+        <java.version>11</java.version>
+        <lettuce-core.version>6.1.8.RELEASE</lettuce-core.version>
+        <jedis-mock.version>1.0.2</jedis-mock.version>
+        <hibernate-validator.version>7.0.4.Final</hibernate-validator.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.akj.springboot.common</groupId>
-            <artifactId>api-common</artifactId>
-            <version>${common.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -39,13 +34,36 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>${jedis.version}</version>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>${lettuce-core.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.fppt</groupId>
+            <artifactId>jedis-mock</artifactId>
+            <version>${jedis-mock.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.akj.springboot</groupId>
+            <artifactId>shared-lib</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
         </dependency>
 
         <dependency>
