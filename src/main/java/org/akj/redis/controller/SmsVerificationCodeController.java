@@ -1,5 +1,6 @@
 package org.akj.redis.controller;
 
+import org.akj.redis.lock.ApiLock;
 import org.akj.redis.service.SmsVerificationCodeService;
 import org.akj.springboot.common.exception.BusinessException;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ public class SmsVerificationCodeController {
 
 
     @PutMapping
+    @ApiLock
     public ResponseEntity sendSmsVerifyCode(@NotNull @RequestParam("phoneNumber") String phoneNumber) {
 
         if (!phoneNumber.matches(PHONE_NUMBER_REGEX)) {

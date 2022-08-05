@@ -6,6 +6,13 @@ spring:
       pool:
         max-active: 3
         max-idle: 2
+        min-idle: 1
+        max-wait: 10000
+#    sentinel:
+#      master: mymaster
+#      nodes:
+#        - 127.0.0.1:26379
+    client-type: lettuce
   datasource:
     url: jdbc:mysql://localhost:3306/e-system?allowPublicKeyRetrieval=true&useSSL=false&charset=utf8mb4
     username: jamie
@@ -23,4 +30,6 @@ spring:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
-logging.org.akj.redis.level: DEBUG
+logging:
+  root.level: INFO
+  org.akj.redis.level: DEBUG
